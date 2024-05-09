@@ -15,8 +15,8 @@ const numberStorage = [{player1: 23,
   player2: 7
 }]
 
-
-
+const contestResults = []
+module.exports = contestResults
 // console.log("Number Generator: ", numberGenerator())
 const generatedNumber =[]
 generatedNumber.push(numberGenerator())
@@ -24,21 +24,48 @@ console.log(generatedNumber[0])
 for (i=0; i<numberStorage.length;i++){
   console.log("player 1 number: ", numberStorage[i].player1)
   console.log("player 2 number: ", numberStorage[i].player2)
-  let comparison = () => {
+
+  let comparison = (player1, player2, random) => {
+    if (player1 === random) {
+        console.log("Player 1 is Winner!")
+        contestResults.push("Player 1 is The Winner")
+    }
+    if (player1 > random) {
+        console.log("player 1 is too high!")
+        contestResults.push("Player 1 is too high!")
+    }
+    if (player1 < random) {
+      console.log("Player 1 is too low!")
+      contestResults.push("Player 1 is too low")
+    }
+    if (player2 === random) {
+      console.log("Player 2 is Winner!")
+      contestResults.push("Player 2 is The Winner")
+  }
+  if (player2 > random) {
+      console.log("player 2 is too high!")
+      contestResults.push("Player 2 is too high")
+  }
+  if (player2 < random) {
+    console.log("Player 2 is too low!")
+    contestResults.push("Player 2 is too low")
+  }
+  }
+  comparison(numberStorage[i].player1, numberStorage[i].player2, generatedNumber[0])
+  console.log(contestResults)
 
   
-  
-    if (numberStorage[i] == generatedNumber[0]) {
-        alert("You picked the correct number!");
+    if (numberStorage[i].player1 == generatedNumber[0]) {
+       ;
     }
-    else if (numberStorage[i] > generatedNumber[0]) {
-        alert("Too high.");
+    else if (numberStorage[i].player1 > generatedNumber[0]) {
+        ;
     }
-    else if (numberStorage[i] < generatedNumber[0]) {
-        alert("Too low.");
+    else if (numberStorage[i].player1 < generatedNumber[0]) {
+        ;
     }
   }
-}
+
 
 console.log(generatedNumber)
 app.get('/random', (req,res) => {
@@ -69,6 +96,21 @@ app.post('/guesses', (req, res) => {
   console.log(numberStorage)
 res.sendStatus(201)
 
+})
+
+app.post('/results', (req, res) => {
+  let incomingReply = req.body
+
+  console.log("these are the comparisons", incomingReply)
+  contestResults.push(incomingReply)
+  console.log(numberStorage)
+res.sendStatus(201)
+
+})
+
+app.get('/results', (req,res) => {
+  console.log("Number Guesses...", numberStorage)
+res.send(contestResults)
 })
 
 app.listen(PORT, () => {
