@@ -14,20 +14,31 @@ app.use(express.static('server/public'));
 const numberStorage = [{player1: 23,
   player2: 7
 }]
+
+
+
 // console.log("Number Generator: ", numberGenerator())
 const generatedNumber =[]
 generatedNumber.push(numberGenerator())
 console.log(generatedNumber[0])
 for (i=0; i<numberStorage.length;i++){
-  console.log(numberStorage[i].player1)
-  if (numberStorage[i].player1 === generatedNumber[0]){
-    console.log("Player 1 is the Winner!")
-  }
-  if (numberStorage[i].player2 === generatedNumber[0]){
-    console.log("player 2 is the winner!")
+  console.log("player 1 number: ", numberStorage[i].player1)
+  console.log("player 2 number: ", numberStorage[i].player2)
+  let comparison = () => {
+
+  
+  
+    if (numberStorage[i] == generatedNumber[0]) {
+        alert("You picked the correct number!");
+    }
+    else if (numberStorage[i] > generatedNumber[0]) {
+        alert("Too high.");
+    }
+    else if (numberStorage[i] < generatedNumber[0]) {
+        alert("Too low.");
+    }
   }
 }
-console.log("player 1 Number: ", numberStorage.player1)
 
 console.log(generatedNumber)
 app.get('/random', (req,res) => {
