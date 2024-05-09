@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+let numberGenerator = require('./numberGenerator.js')
 const app = express();
 const PORT = 5000;
 

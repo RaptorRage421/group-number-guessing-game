@@ -4,6 +4,7 @@ function onReady() {
 
 onReady()
 
+
 let guessList = () => {
   console.log("Guess List is working!")
   axios({
@@ -42,3 +43,25 @@ let renderGuesses = (allItems) => {
 }
 
 
+let addNewGuess = () => {
+    
+  console.log("in add item")
+
+  axios ({
+      method: 'POST',
+      url: '/guesses',
+      data:{
+          player1: document.getElementById('player_1_guess').value,
+          player2: document.getElementById('player_2_guess').value
+      }
+  })
+.then((response) => {
+  console.log("SUCCESS")
+  guessList()
+})
+.catch((error) => {
+console.log('POST for /inventory did not work')
+alert("Ooooopsies")
+})
+  document.getElementById("inputForm").reset()
+}
