@@ -65,3 +65,25 @@ alert("Ooooopsies")
 })
   document.getElementById("inputForm").reset()
 }
+
+
+
+// let initializeRandom = () => {
+    
+//     console.log("Guess List is working!")
+//     axios({
+//         method: 'GET', // HTTP method
+//         url: '/random'
+//     })
+//     .then((response) => { // Captures the response from server
+//         // Must be response.data
+//         let generatedNumber = response.data
+//         console.log("guesses are...", generatedNumber)
+    
+//             // Render quotes to DOM
+//     })
+//     .catch((error) => { // Manages errors
+//         console.log("GET for /guesses didnt work...", error)
+//         alert("Oopsie, that didnt work.")
+//     })
+//   }
