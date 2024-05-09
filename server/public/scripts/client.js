@@ -4,7 +4,6 @@ function onReady() {
 
 onReady()
 totalGuesses = 0
-const contestResults = require('contestResults')
 let guessList = () => {
 
   console.log("Guess List is working!")
@@ -40,7 +39,8 @@ let renderGuesses = (allItems) => {
   console.log("renderItems is Working...", allItems)
   let guessOutput = document.getElementById('guesses_go_here')
   let totalRounds = document.getElementById('totalguesses')
-  let 
+  
+
   console.log("total Guesses", totalGuesses)
   console.log("Total Rounds: " , totalRounds)
   guessOutput.innerHTML = ""
@@ -94,27 +94,27 @@ alert("Ooooopsies")
 
 
 
-let comparison = () => {
+// let comparison = () => {
 
-  console.log("comparison is working")
-  axios({
-      method: 'GET', // HTTP method
-      url: '/results'
-  })
-  .then((response) => { // Captures the response from server
-      // Must be response.data
-      let resultValues = response.data
-      console.log("guesses are...", resultValues)
-          // Render quotes to DOM
+//   console.log("comparison is working")
+//   axios({
+//       method: 'GET', // HTTP method
+//       url: '/results'
+//   })
+//   .then((response) => { // Captures the response from server
+//       // Must be response.data
+//       let resultValues = response.data
+//       console.log("guesses are...", resultValues)
+//           // Render quotes to DOM
           
-         renderResults()
-  })
-  .catch((error) => { // Manages errors
-      console.log("GET for /guesses didnt work...", error)
-      alert("Oopsie, that didnt work.")
-  })
-}
-guessList()
+//          renderResults()
+//   })
+//   .catch((error) => { // Manages errors
+//       console.log("GET for /guesses didnt work...", error)
+//       alert("Oopsie, that didnt work.")
+//   })
+// }
+// guessList()
 
 
 // let initializeRandom = () => {
