@@ -26,48 +26,30 @@ let guessList = () => {
 guessList()
 
 
-let renderResults = (resultValues) => {
-  let results = document.getElementById('results')
-  for (i=0;i<resultValues.length;i++){
-    results.innerHTML = `${resultValues[i]}`
-    console.log(resultValues[i])
-  }
-}
 
 let renderGuesses = (allItems) => {
   console.log("renderItems is Working...", allItems)
   let guessOutput = document.getElementById('guesses_go_here')
   let totalRounds = document.getElementById('totalguesses')
-  
-
   console.log("total Guesses", totalGuesses)
-  console.log("Total Rounds: " , totalRounds)
+  console.log("Total Rounds: " , totalRounds.innerHTML)
   guessOutput.innerHTML = ""
   totalRounds.innerHTML = ""
-// totalRounds.innerHTML = totalGuesses
-totalGuesses ++
+console.log("Actually all Items:", allItems)
   for (i=0;i<allItems.length;i++){
+    console.log("Guesses from the client js", allItems[i])
+   
+      guessOutput.innerHTML += ` 
+      <div>Player 1 Guess: [${allItems[i].player1guess}]    Results: ${allItems[i].player1results}</div>
+      <div>Player 2 Guess: [${allItems[i].player2guess}]    Results: ${allItems[i].player2results}</div>
     
-      console.log(allItems[i].player1)
-      console.log(allItems[i].player2)
-      guessOutput.innerHTML += `<tr>
-      <th>${allItems[i].player1}</th>
-      <th>${allItems[i].player2}</th>
-    </tr>`
+    
+    `
   }
   totalRounds.innerHTML = totalGuesses
 
 }
 
-// let addNewComparison = () => {
-//   console.log("in comparison")
-//   axios ({
-//         method: 'POST',
-//         url: '/results',
-//         data:
-
-//   })
-// }
 let addNewGuess = (event) => {
   event.preventDefault()
   console.log("in add item")
@@ -83,7 +65,7 @@ let addNewGuess = (event) => {
 .then((response) => {
   console.log("SUCCESS")
   
-  
+  totalGuesses ++
   guessList()
 })
 .catch((error) => {
@@ -92,48 +74,3 @@ alert("Ooooopsies Add new Guess Failed")
 })
   document.getElementById("inputForm").reset()
 }
-
-
-
-// let comparison = () => {
-
-//   console.log("comparison is working")
-//   axios({
-//       method: 'GET', // HTTP method
-//       url: '/results'
-//   })
-//   .then((response) => { // Captures the response from server
-//       // Must be response.data
-//       let resultValues = response.data
-//       console.log("guesses are...", resultValues)
-//           // Render quotes to DOM
-          
-//          renderResults()
-//   })
-//   .catch((error) => { // Manages errors
-//       console.log("GET for /guesses didnt work...", error)
-//       alert("Oopsie, that didnt work.")
-//   })
-// }
-// guessList()
-
-
-// let initializeRandom = () => {
-    
-//     console.log("Guess List is working!")
-//     axios({
-//         method: 'GET', // HTTP method
-//         url: '/random'
-//     })
-//     .then((response) => { // Captures the response from server
-//         // Must be response.data
-//         let generatedNumber = response.data
-//         console.log("guesses are...", generatedNumber)
-    
-//             // Render quotes to DOM
-//     })
-//     .catch((error) => { // Manages errors
-//         console.log("GET for /guesses didnt work...", error)
-//         alert("Oopsie, that didnt work.")
-//     })
-//   }
