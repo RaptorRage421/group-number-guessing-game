@@ -13,46 +13,46 @@ app.use(express.static('server/public'));
 // GET & POST Routes go here
 const numberStorage = []
 
-const contestResults = []
+
 
 // console.log("Number Generator: ", numberGenerator())
-const generatedNumber = []
-generatedNumber.push(numberGenerator())
-console.log(generatedNumber[0])
+const generatedNumber = numberGenerator()
+
+console.log(generatedNumber)
 
 
 
   let comparison = (player1, player2) => {
-    if (player1 == generatedNumber[0]) {
+    const compareResults = {}
+    compareResults.player1guess = player1
+    compareResults.player2guess = player2
+    if (player1 === generatedNumber) {
       console.log("Player 1 is Winner!")
-      contestResults.push("Player 1 is The Winner")
+      compareResults.player1results = "Player 1 Wins"
     }
-    if (player1 > generatedNumber[0]) {
+    if (player1 > generatedNumber) {
       console.log("player 1 is too high!")
-      contestResults.push("Player 1 is too high!")
+      compareResults.player1results = "Too high..."
     }
-    if (player1 < generatedNumber[0]) {
+    if (player1 < generatedNumber) {
       console.log("Player 1 is too low!")
-      contestResults.push("Player 1 is too low")
+      compareResults.player1results = "Too low..."
     }
-    if (player2 == generatedNumber[0]) {
+    if (player2 === generatedNumber) {
       console.log("Player 2 is Winner!")
-      contestResults.push("Player 2 is The Winner")
+      compareResults.player2results = "Player 2 Wins!"
     }
-    if (player2 > generatedNumber[0]) {
+    if (player2 > generatedNumber) {
       console.log("player 2 is too high!")
-      contestResults.push("Player 2 is too high")
+      compareResults.player2results = "Too high..."
     }
-    if (player2 < generatedNumber[0]) {
+    if (player2 < generatedNumber) {
       console.log("Player 2 is too low!")
-      contestResults.push("Player 2 is too low")
+      compareResults.player2results = "Too low..."
     }
-    return contestResults
+    numberStorage.push(compareResults)
   }
   
-  
-
-console.log(generatedNumber)
 
 
 app.get('/guesses', (req, res) => {
@@ -67,8 +67,7 @@ app.post('/guesses', (req, res) => {
   let compare = comparison(incomingGuess.player1, incomingGuess.player2)
   console.log("Adding our guesses", incomingGuess)
   console.log("comparison is: ", compare)
-  numberStorage.push(incomingGuess)
-  console.log(numberStorage)
+ 
   res.sendStatus(201)
 
 })
