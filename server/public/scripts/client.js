@@ -1,7 +1,6 @@
 function onReady() {
   console.log("JavaScript is loaded!")
 }
-
 onReady()
 totalGuesses = 0
 let guessList = () => {
@@ -44,9 +43,11 @@ let renderGuesses = (allItems) => {
   console.log("total Guesses", totalGuesses)
   console.log("Total Rounds: " , totalRounds)
   guessOutput.innerHTML = ""
+  totalRounds.innerHTML = ""
 // totalRounds.innerHTML = totalGuesses
+totalGuesses ++
   for (i=0;i<allItems.length;i++){
-    totalGuesses ++
+    
       console.log(allItems[i].player1)
       console.log(allItems[i].player2)
       guessOutput.innerHTML += `<tr>
@@ -67,8 +68,8 @@ let renderGuesses = (allItems) => {
 
 //   })
 // }
-let addNewGuess = () => {
-  
+let addNewGuess = (event) => {
+  event.preventDefault()
   console.log("in add item")
 
   axios ({
@@ -86,8 +87,8 @@ let addNewGuess = () => {
   guessList()
 })
 .catch((error) => {
-console.log('POST for /inventory did not work')
-alert("Ooooopsies")
+console.log('POST for /guesses has not been added.')
+alert("Ooooopsies Add new Guess Failed")
 })
   document.getElementById("inputForm").reset()
 }
