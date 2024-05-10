@@ -50,11 +50,7 @@ console.log(generatedNumber[0])
     return contestResults
   }
   
-  console.log("contest results", contestResults)
-
-
-
-
+  
 
 console.log(generatedNumber)
 
