@@ -40,9 +40,12 @@ console.log("Actually all Items:", allItems)
     console.log("Guesses from the client js", allItems[i])
    
       guessOutput.innerHTML += ` 
-      <div>Player 1 Guess: [${allItems[i].player1guess}]    Results: ${allItems[i].player1results}</div>
-      <div>Player 2 Guess: [${allItems[i].player2guess}]    Results: ${allItems[i].player2results}</div>
-    
+      <tr>
+      <td class="player1">Guess: ${allItems[i].player1guess}<div>
+      ${allItems[i].player1results}</div></td>
+      <td class="player2">Guess: ${allItems[i].player2guess}<div>
+      ${allItems[i].player2results}</div></div></td>
+    </tr>
     
     `
   }

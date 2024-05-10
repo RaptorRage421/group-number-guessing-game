@@ -15,18 +15,41 @@
     <div><span id="results"></span></div>
 <h2>Enter Your Guesses!</h2>
 <h2>Total Guesses: <span id="totalguesses"></span></h2>
-
+<table>
+  <thead>
+    <tr>
+      <th>Player 1</th>
+      <th>Player 2</th>
+    </tr>
+  </thead>
   <form id="inputForm">
-    <input id="player_1_guess" type="text" placeholder="Make Your Guess"><span class="spacing"></span>
-    <input id="player_2_guess" type="text" placeholder="Make Your Guess">
-    <button onClick="addNewGuess(event)">Add</button>
- 
-   
-</form>
-
-    <div id="guesses_go_here">
+    <tbody>
+      <tr>
+        <td><input class="player1" id="player_1_guess" type="text" placeholder="Make Your Guess"></td>
+        <td><input class="player2" id="player_2_guess" type="text" placeholder="Make Your Guess"></td>
+        
+      </tr>
+     
+        
+        
       
-    </div>
+      </tbody>
+    
+    
+      
+  </form>
+  </table>
+  <span class="spacing"><button id="button" onClick="addNewGuess(event)">Add</button></span>
+  
+
+
+<div>
+  <table>
+    <tbody id="guesses_go_here">
+
+    </tbody>
+  </table>
+</div>
 
 </body>
 </html>

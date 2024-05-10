@@ -1,0 +1,112 @@
+/* GLOBAL TYPOGRAPHY */
+body {
+  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fffdda;
+    font-family: 'Roboto', sans-serif;
+    color: #313131;
+    font-size: 1em;
+  }
+  
+.spacing{
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+  /* FLEXBOX LAYOUT */
+  html,
+  body {
+    min-height: 100vh;
+    margin: auto;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background-position: center;
+    background-color: #4F2683;
+    height: 8em;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+    color: #ffffff
+  }
+  
+  main {
+    flex: auto;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  
+  
+  /* HEADER/FOOTER */
+  header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+  
+    font-weight: 500;
+  }
+  
+  
+  /* FORM ELEMENTS */
+  input {
+    padding: .5em;
+    width: 150px;
+    background: #FCFCFC;
+    border: 1px solid;
+  }
+  
+  button {
+    padding: .5em;
+    width: 75px;
+  }
+  
+  
+  /* TABLE */
+  table {
+    background-color: #313131;
+    width: 100%;
+    text-align: left;
+  }
+  
+  table,
+  th,
+  td {
+  
+    height: fit-content;
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 2.15em;
+  }
+  
+  th,
+  td {
+    padding: .1em;
+    min-width: 3em;
+  }
+  
+  thead {
+    background: #4F2683;
+    color: #fcfcfc;
+  }
+  
+  .player1{
+    background-color:#fde7a9 ;
+  }
+  .player2{
+    background-color: #b27ef7;
+  }
+
