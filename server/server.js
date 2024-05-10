@@ -29,7 +29,7 @@ let comparison = (player1, player2) => {
   if (player1 === generatedNumber) {
 
     console.log("Player 1 is Winner!")
-    compareResults.player1results = "<b>Player 1 Wins</b>"
+    compareResults.player1results = "<b><h1>Player 1 Wins</h1></b>"
   }
   if (player1 > generatedNumber) {
     console.log("player 1 is too high!")
@@ -42,7 +42,7 @@ let comparison = (player1, player2) => {
   if (player2 === generatedNumber) {
    
     console.log("Player 2 is Winner!")
-    compareResults.player2results = "<b>Player 2 Wins</b>"
+    compareResults.player2results = "<b><h1>Player 2 Wins</h1></b>"
   }
   if (player2 > generatedNumber) {
     console.log("player 2 is too high!")

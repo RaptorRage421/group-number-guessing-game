@@ -39,10 +39,10 @@ let renderGuesses = (allItems) => {
   let backgroundSwitch = document.querySelector('body')
   for (i = 0; i < allItems.length; i++) {
     console.log("Guesses from the client js", allItems[i])
-if (allItems[i].player1results === "<b>Player 1 Wins</b>"){
+if (allItems[i].player1results === "<b><h1>Player 1 Wins</h1></b>"){
   backgroundSwitch.classList.add('player1') 
 }
-if (allItems[i].player2results === "<b>Player 2 Wins</b>"){
+if (allItems[i].player2results === "<b><h1>Player 2 Wins</h1></b>"){
   backgroundSwitch.classList.add('player2')
 }
     guessOutput.innerHTML += ` 
