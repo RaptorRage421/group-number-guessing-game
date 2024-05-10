@@ -20,14 +20,11 @@ const generatedNumber = numberGenerator()
 
 console.log(generatedNumber)
 
-
-
 let comparison = (player1, player2) => {
   const compareResults = {}
   compareResults.player1guess = player1
   compareResults.player2guess = player2
   if (player1 === generatedNumber) {
-
     console.log("Player 1 is Winner!")
     compareResults.player1results = "<b><h1>Player 1 Wins</h1></b>"
   }
@@ -40,7 +37,6 @@ let comparison = (player1, player2) => {
     compareResults.player1results = "<b>Too low...</b>"
   }
   if (player2 === generatedNumber) {
-   
     console.log("Player 2 is Winner!")
     compareResults.player2results = "<b><h1>Player 2 Wins</h1></b>"
   }
@@ -58,7 +54,7 @@ let comparison = (player1, player2) => {
 
 
 app.get('/guesses', (req, res) => {
-  console.log("Number Guesses...", numberStorage)
+  // console.log("Number Guesses...", numberStorage)
   res.send(numberStorage)
 })
 
@@ -68,7 +64,6 @@ app.post('/guesses', (req, res) => {
   let incomingGuess = req.body
   let compare = comparison(incomingGuess.player1, incomingGuess.player2)
   console.log("Adding our guesses", incomingGuess)
-  console.log("comparison is: ", compare)
 
   res.sendStatus(201)
 

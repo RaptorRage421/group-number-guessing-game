@@ -28,17 +28,17 @@ guessList()
 
 
 let renderGuesses = (allItems) => {
-  console.log("renderItems is Working...", allItems)
+  // console.log("renderItems is Working...", allItems)
   let guessOutput = document.getElementById('guesses_go_here')
   let totalRounds = document.getElementById('totalguesses')
   console.log("total Guesses", totalGuesses)
   console.log("Total Rounds: ", totalRounds.innerHTML)
   guessOutput.innerHTML = ""
   totalRounds.innerHTML = ""
-  console.log("Actually all Items:", allItems)
+  // console.log("Actually all Items:", allItems)
   let backgroundSwitch = document.querySelector('body')
   for (i = 0; i < allItems.length; i++) {
-    console.log("Guesses from the client js", allItems[i])
+    // console.log("Guesses from the client js", allItems[i])
 if (allItems[i].player1results === "<b><h1>Player 1 Wins</h1></b>"){
   backgroundSwitch.classList.add('player1') 
 }
@@ -61,7 +61,7 @@ if (allItems[i].player2results === "<b><h1>Player 2 Wins</h1></b>"){
 
 let addNewGuess = (event) => {
   event.preventDefault()
-  console.log("in add item")
+  // console.log("in add item")
 
   axios({
     method: 'POST',
@@ -72,7 +72,7 @@ let addNewGuess = (event) => {
     }
   })
     .then((response) => {
-      console.log("SUCCESS")
+      // console.log("SUCCESS")
 
       totalGuesses++
       guessList()
