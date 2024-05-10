@@ -4,12 +4,12 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #fffdda;
+    background-color: #313131;
     font-family: 'Roboto', sans-serif;
-    color: #313131;
+    color: #FCFCFC;
     font-size: 1em;
   }
-  
+
 .spacing{
     padding: 1em;
     text-align: center;
@@ -90,6 +90,7 @@ body {
     border: 1px solid black;
     border-collapse: collapse;
     height: 2.15em;
+    color: gray
   }
   
   th,
@@ -104,9 +105,11 @@ body {
   }
   
   .player1{
-    background-color:#fde7a9 ;
+    background-color:#fde7a9;
+    color: gray
   }
   .player2{
     background-color: #b27ef7;
+    color: lightgray
   }
 
